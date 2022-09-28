@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:wght@200;400&display=swap');
+
+*{
+  box-sizing: border-box;
+}
+body{
+  font-family: 'Poppins',sans-se
+  rif;
+  display: flex;
+  /* flex-wrap: wrap; */
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(229, 153, 229);
+  overflow: hidden;
+  margin: 0;
+  height: 100vh;   /* 不需要滚动 一般就100vhs  */
+
+  padding: 20px;
+}
+
+.container{
+  text-align: center;
+  max-width: 100%;
+  width: 600px;
+  background-color: white;
+  padding: 20px 50px;
+  border-radius: 10px;
+  box-shadow:0 10px 20px rgba(0,0,0,0.1), 0 6px 6px rgba(0,0,0,0.1);
+}
+h3{
+  margin: 0;
+  letter-spacing: 2px;
+  opacity: 0.5;
+}
+.joke{
+  line-height: 40px;
+  margin: 50px auto;
+  max-width: 400px;
+  font-size: 30px;
+  letter-spacing: 1px;
+}
+.btn{
+  border: 0;
+  box-shadow:0 10px 20px rgba(0,0,0,0.1), 0 6px 6px rgba(0,0,0,0.1);
+  border-radius: 5px;
+  background-color: rgb(188, 135, 241);
+  color: white;
+  padding: 14px 40px;
+  cursor: pointer;
+}
+.btn:active{
+  transform: scale(0.98);
+}
+.btn:focus{
+  outline: 0;
+}

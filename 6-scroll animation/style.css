@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+
+*{
+    box-sizing: border-box;
+}
+body{
+    background-color: #efedd6;
+    font-family: 'Lato',sans-serif;
+    display: flex; 
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* overflow: hidden; */
+    margin: 0;
+    /* height: 100vh;   需要上下滚动 不能设置100vh */   
+}
+.box{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 300px;
+    height: 150px;
+    margin: 20px;
+    background-color: #83af2c;
+    border-radius: 10px;
+    box-shadow: 2px 4px 5px rgb(0,0,0,0.3);
+    transform: translateX(200%);
+    transition: transform 0.5ss ease-in;
+}
+
+.box:nth-of-type(even){
+    transform:translateX(-200%)
+}
+.box.show {
+    transform: translateX(0);
+    transition: transform 0.4s ease-in;
+}
+

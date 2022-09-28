@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+
+/* 一些常量 */
+:root{
+  --border-fill: #759c25;
+  --border-empty: #e0e0e0;
+}
+
+*{
+  box-sizing: border-box;
+}
+body{
+  font-family: 'Muli', sans-serif;
+  background-color: #f1f1f1;
+  margin: 0;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container{
+  text-align: center;
+}
+.progress-container{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  position: relative;     /* 定位这里什么意思？ */
+  max-width: 100%;
+  width: 300px;
+}
+
+.progress{
+  background-color: var(--border-fill);
+  position: absolute;
+  top:50%;
+  left:0;
+  height: 4px;
+  /* width: 50%; */
+  width: 0%;
+  transform: translateY(-50%);   /* 只是 纵向居中直线*/
+  z-index: -1;
+  transition: 0.3s ease-in-out;
+}
+
+/* 在container的最底层产生的效果，不会影响dom,只显示位置 */
+.progress-container::before{
+  content: '';   /*一定要有的content*/
+  background-color: var(--border-empty);
+  position: absolute;
+  top:50%;
+  left:0;
+  height: 4px;
+  /* width: 50%; */
+  width: 100%;
+  transform: translateY(-50%);   /* 只是 纵向居中直线*/
+  z-index: -1;
+}
+
+/* Circle */
+.circle{
+  background-color: #fff;
+  color: #999;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  border: 3px solid var(--border-empty);
+  transition: border .4s ease;
+}
+.circle.active{
+  border-color: var(--border-fill);
+}
+.btn{
+  margin: 5px;
+  padding: 8px 30px;
+  cursor: pointer;
+  color: white;
+  background-color: var(--border-fill);
+  border:0;
+  border-radius: 5px;
+  font-family: inherit;
+}
+.btn:active{
+  transform: scale(0.98);
+}
+.btn:focus{
+  outline: 0;
+}
+.btn:disabled{
+  background-color: var(--border-empty);
+  cursor: not-allowed;
+}

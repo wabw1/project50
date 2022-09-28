@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+*{
+  box-sizing: border-box;
+}
+body{
+  font-family: 'Muli',sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: steelblue;
+  color: white;
+  overflow: hidden;
+  margin: 0;
+  height: 100vh;   /* 不需要滚动 一般就100vhs  */
+}
+.container{
+  padding: 20px 40px;
+  background-color: rgba(0,0,0,0.4);
+  border-radius: 5px;
+}
+.container h1{
+  text-align: center;
+  /* margin-bottom: 30px; */
+}
+.container a{
+  color: lightblue;
+  /* text-decoration: none; 删除下划线*/
+}
+.form-control{
+  position: relative;
+  margin: 10px 0 20px;
+  width: 300px;
+}
+.form-control input{
+  background-color: transparent;
+  border:none;
+  border-bottom: 2px white solid;
+  display: block;    /*改为整行*/
+  width: 100%;    /*full the width*/
+  color: white;
+  padding: 20px 0;
+  font-size: 18px;
+}
+.form-control input:focus, .form-control input:valid{
+  outline: none;   /* 去掉框框 */
+  /* 选中input改变颜色 */
+  border-color: lightblue;
+}
+
+.btn{
+  width: 100%;
+  background-color: lightblue;
+  outline: 0;
+  cursor: pointer;
+  border-radius: 5px;
+  border: 0;
+  padding: 15px;
+  font-size: 16px;
+  font-family: inherit;
+}
+/* click缩放 */
+.btn:active{
+  transform:scale(0.98);
+}
+/* 无所谓 */
+.text{
+  margin-top: 30px;
+  margin-bottom: 0;
+}
+
+.form-control label{
+  position: absolute;
+  top: 15px;
+  left: 0;
+}
+.form-control label span{
+  display: inline-block;
+  min-width: 5px;
+  font-size: 18px;
+  transition: 0.3s cubic-bezier(0.65,-0.5,0.265,1.55);
+}
+/* 加号表示 紧接着前面的后面的label span */
+.form-control input:hover +  label span,
+.form-control input:valid +  label span{
+    color:lightblue;
+    transform: translateY(-30px);
+    /* transition: transform 0.3s; */
+}

@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+
+*{
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+    font-family: 'Courier New', Courier, monospace;
+    background: linear-gradient(90deg , lightsalmon,mediumorchid);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.search{
+    position: relative;
+    height: 50px;
+}
+/* 中间没有空格，就是同时满足两个类的element */
+.search .input{
+    background-color: white;
+    border: 0;
+    font-size: 18px;
+    height: 50px;
+    width: 50px;
+    transition: width 0.3s ease;
+    padding: 15px;
+}
+.btn{
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 50px;
+    width: 50px;
+    font-size: 24px;
+    border: 0;
+    cursor: pointer;
+    transition: transform 0.3s ease;  /**/
+}
+.btn:focus, .input:focus{
+    outline: none;
+}
+
+.search.active .input{
+    width: 200px;
+}
+.search.active .btn{
+    transform: translateX(200px);
+}

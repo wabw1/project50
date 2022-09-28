@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+
+*{
+  box-sizing: border-box;   
+}
+
+body {
+  font-family: 'Muli', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;   /* 去掉滚动条 */
+  margin: 0;
+}
+
+.container{
+  display: flex;
+  width: 90vw;
+  color: rgb(175, 172, 172);
+}
+
+.panel{
+  background-size: auto;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 80vh;
+  border-radius: 20px;
+  color:#cccccc;
+  cursor: pointer;
+  flex: 0.5;   /* even row*/
+  margin:5px;
+  position: relative;
+  transition: flex 0.5s ease-in;   /*这个是什么意思？ 渐入？*/
+}
+
+.panel h3{
+  font-size: 24px;
+  position: absolute;
+  left: 20px;
+  bottom: 20px;
+  margin: 0;
+  opacity: 0 ;
+}
+
+.panel.active{
+  flex: 5;
+}
+.panel.active h3{
+  opacity: 1;
+  transition: opacity 0.3s ease-in 0.3s;
+}
+
+/* 处理小屏幕 */
+@media (max-width: 480px){
+  .container{
+    display: flex;
+    width: 100vw;
+  }
+  .panel:nth-of-type(4){
+    display: none;
+  }
+}

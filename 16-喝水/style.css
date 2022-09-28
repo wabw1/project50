@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap');
+:root{
+  --border-color: #144fc6;
+  --full-color: #6ab3f8;
+}
+
+*{
+  box-sizing: border-box;
+}
+
+body{
+  font-family: 'Roboto Mono',sans-serif;
+  color: white;
+  background-color: steelblue;
+  display: flex;  
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 40px;
+}
+h1{
+  margin: 10px 0 0;
+}
+h3{
+  margin: 10px 0;
+}
+/* 所有杯子形状的 */
+.cup{
+  background-color: white;
+  border: 4px solid var(--border-color);
+  color: var(--border-color);
+  border-radius: 0 0  40px 40px;
+  height: 330px;
+  width: 150px;
+  margin: 20px 0;
+  overflow: hidden;
+  display: flex;   
+  flex-direction: column;
+}
+.cup.cup-small{
+  width: 50px;
+  height: 90px;
+  border-radius: 0 0 15px 15px;
+  font-size: 14px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  cursor: pointer;
+  margin: 10px;
+  background-color: rgba(255,255,255,0.9);
+  transition: 0.3s ease;
+}
+/* 填满后的小瓶子 */
+.cup.cup-small.full{
+  background-color: var(--full-color);
+  color: white;
+}
+
+  /*  分成两行   cool😎 */
+.cups{
+  display: flex;
+  flex-wrap: wrap;
+  width: 280px;
+  justify-content: center;
+  align-items: center;
+}
+.remain span{
+  font-size: 20px;
+  font-weight: bold;
+}
+small{
+  font-size: 12px;
+}
+/* remain */
+.remain {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  flex: 1;    /* 代表填充完全的 父容器 */
+}
+.percentage{
+  background-color: var(--full-color);
+  text-align: center;
+  font-size: 25px;
+  font-weight: bold;
+  transition: 0.3s ease;
+  height: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}

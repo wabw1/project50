@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+
+:root{
+    --left-bg-clr: rgba(61, 61, 65, 0.7);
+    --right-bg-clr: rgba(85, 80, 79, 0.7);
+    --left-btn-hover-clr:rgba(251, 74, 50, 1);
+    --right-btn-hover-clr: rgba(251, 74, 50, 1);
+
+    --hover-width: 70%;
+    --non-hover-width: 30%;
+    --hover-speed: 0.7s;  
+}
+
+*{
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Lato',sans-serif;
+    overflow: hidden;
+    margin: 0;
+    height: 100vh;   /* 不需要滚动 一般就100vhs  */
+}
+
+h1{
+    font-size: 4rem ;
+    color: white;
+    position:absolute;
+    left: 50%;
+    top: 20%;
+    transform: translateX(-50%) ; 
+    white-space: nowrap;  
+}
+.btn{
+    display: flex;
+    align-items: centers;
+    justify-content: center;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translateX(-50%);     /* 正好在中间 */
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;   /*大写*/
+    width: 10rem;
+    padding: 1.2rem;
+    border: #fff solid 0.2rem;
+}
+
+.container{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: #333;
+}
+
+/* 激活hover-left */
+.hover-left .left{
+    width: var(--hover-width);
+}
+.hover-left .right{
+    width: var(--non-hover-width);   
+}
+/* 激活hover-right */
+.hover-right .left{
+    width: var(--non-hover-width);
+}
+.hover-right .right{
+    width: var(--hover-width);   
+}
+
+
+.split{
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+}
+.split.left .btn:hover{
+    background-color: var(--left-btn-hover-clr);
+}
+.split.right .btn:hover{
+    background-color: var(--right-btn-hover-clr);
+}
+/* 添加 遮板效果  */
+.split.left::before{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: var(--left-bg-clr);
+    transition: all var(--hover-speed) ease-in-out;
+} 
+.split.left{
+    background: url('https://images.unsplash.com/photo-1436397543931-01c4a5162bdb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80');
+    background-size: auto;
+    background-repeat: no-repeat;
+    color: white;
+    left: 0;
+    transition: all var(--hover-speed) ease-in-out;
+}
+.split.right::before{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: var(--right-bg-clr);
+    transition: all var(--hover-speed) ease-in-out;
+}
+.split.right{
+    background: url('https://images.unsplash.com/photo-1492724282899-01d3e50e6862?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2673&q=80');
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: white;
+    /* left:50%; 效果一样*/
+    right: 0;   
+    transition: all var(--hover-speed) ease-in-out;
+}
+
+@media (max-width: 800px) {
+    h1{
+        top:30%;
+        font-size: 2rem; 
+    }
+    .btn{
+        padding: 0.8rem;
+        width: 8rem;
+    }
+}

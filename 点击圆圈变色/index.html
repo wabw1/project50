@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .container {
+            display: flex;
+        }
+
+        .item {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            border: 1px solid black;
+            margin: 100px 10px;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+    </div>
+    <script>
+        const colorsArr = ['green', 'red', 'yellow'];
+        function clickToChangeColor() {
+            // method 1.
+            // const items = document.getElementsByClassName('item');
+            // Array.from(items).forEach(item => {
+            //     // 对每个item, 绑定点击事件
+            //     let clrIdx = 0;
+            //     item.addEventListener('click', () => {
+            //         if (clrIdx === 3) {
+            //             clrIdx = 0;
+            //         }
+            //         item.style.backgroundColor = colorsArr[clrIdx];
+            //         clrIdx++;
+            //     })
+            // })
+
+            // method 2.
+            const items = document.getElementsByClassName('item');
+            for(var i=0; i<items.length; i++){
+                const curItem = items[i];
+                var clrIdx = 0;
+                curItem.addEventListener('click', (e)=>{
+                    console.log()
+                    if(clrIdx===3){
+                        clrIdx =0;
+                    }
+                    curItem.style.backgroundColor = colorsArr[clrIdx];
+                    clrIdx++;
+                })
+            }
+        }
+        clickToChangeColor();
+    </script>
+</body>
+
+</html>
