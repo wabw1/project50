@@ -1,0 +1,42 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+  background-color: steelblue;
+}
+.empty {
+  width: 100px;
+  height: 100px;
+  border: 2px solid;
+  margin: 10px;
+  background-color: white;
+}
+.fill {
+  background-image: url("https://source.unsplash.com/random/100x100");
+  cursor: pointer;
+  width: 96px;
+  height: 96px;
+}
+.hold {
+  border: solid 5px #ccc;
+}
+/* 放在某个盒子上方，背景变色 */
+.hovered {
+  background-color: rgb(93, 92, 92);
+  border: dashed white;
+}
+
+/* media选择 */
+@media (max-width: 800px) {
+  body {
+    flex-direction: column;
+  }
+}

@@ -1,11 +1,11 @@
-const jokeContent = document.getElementById('joke');
-const jokeBtn = document.getElementById('jokeBtn');
+const jokeContent = document.getElementById("joke");
+const jokeBtn = document.getElementById("jokeBtn");
 
 // btn绑定监听事件
-jokeBtn.addEventListener('click', generateJoke);
+jokeBtn.addEventListener("click", generateJoke);
 
 // fetch做法
-function generateJoke(){
+/* function generateJoke(){
   fetch('https://icanhazdadjoke.com/',{
     headers: {
       'Accept':'application/json',
@@ -15,14 +15,14 @@ function generateJoke(){
   .then(data => {
     jokeContent.innerText = data.joke;
   });
-}
+} */
 
 // async, await做法
-async function generateJoke(){
-  const res = await fetch('https://icanhazdadjoke.com/',{
+async function generateJoke() {
+  const res = await fetch("https://icanhazdadjoke.com/", {
     headers: {
-      'Accept':'application/json'
-    }
+      Accept: "application/json",
+    },
   });
   const data = await res.json();
   jokeContent.innerHTML = data.joke;

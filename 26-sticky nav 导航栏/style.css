@@ -1,0 +1,106 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans&display=swap");
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  color: #222;
+  height: 100vh;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* 首页 */
+.hero {
+  background-image: url("./nasa.jpg");
+  background-position: bottom center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-items: center;
+  text-align: center; /* 字体剧居中 */
+  color: white;
+  margin-bottom: 20px;
+  /* 需要覆盖在上面的伪元素 */
+  position: relative;
+  z-index: -2; /* 文字依然会浮在最上层 */
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  /* left: 0;
+  top: 0; */
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: -1;
+}
+.hero h1 {
+  font-size: 40px;
+  margin: -20px auto 20px;
+}
+.hero p {
+  letter-spacing: 0.2px;
+}
+/* 内容页 */
+.content h2 {
+  margin: 20px 0;
+  font-size: 150%;
+}
+.content p {
+  color: #555;
+  line-height: 20px;
+  letter-spacing: 0.8px;
+}
+
+/* nav */
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  transition: all 0.3s ease-in-out; /* 过度效果 */
+}
+.nav .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 20px 15px;
+}
+.nav ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  list-style-type: none;
+}
+.nav a {
+  color: white;
+  text-decoration: none;
+  padding: 7px 10px;
+  transition: color 0.3s ease-in;
+}
+
+/* nav 激活状态 */
+.nav.active {
+  background-color: white;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+.nav.active a {
+  color: black;
+}
+/* 点击或者hover变色为红 */
+.nav a.current,
+.nav a:hover {
+  color: red;
+  font-weight: bold;
+}

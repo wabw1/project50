@@ -1,0 +1,49 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:wght@400;700&display=swap");
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  background-color: #f5f5f5;
+  font-family: "Roboto", sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+#canvas {
+  /* background-color: antiquewhite; */
+  border: 2px solid steelblue;
+}
+#color {
+  width: 50px;
+}
+.toolbox {
+  display: flex;
+  background-color: steelblue;
+  border: 2px solid rgb(58, 73, 88);
+  width: 504px;
+  padding: 10px;
+}
+
+.toolbox > * {
+  background-color: white;
+  display: inline-flex;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  align-items: center;
+
+  font-size: 150%;
+  margin: 0.1rem;
+  padding: 0.1rem;
+  cursor: pointer;
+}
+
+/* 只对X元素做样式 */
+.toolbox > *:last-child {
+  margin-left: auto;
+}
