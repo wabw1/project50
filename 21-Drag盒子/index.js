@@ -20,15 +20,13 @@ const dragOver = function (e) {
 };
 const dragEnter = function (e) {
   e.preventDefault();
-  console.log("当前容器被hovered");
+
   this.className += " hovered";
 };
 const dragLeave = function () {
-  console.log("当前容器被离开");
   this.className = "empty";
 };
 const dragDrop = function () {
-  console.log("drop到当前的容器里");
   this.className = "empty";
   this.append(fillNode);
 };

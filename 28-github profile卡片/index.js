@@ -74,5 +74,3 @@ form.addEventListener("submit", async (e) => {
   e.preventDefault();
   getUser(search.value);
 });
-
-// ${repos.map((repo) => `<a class="repoLink" href="http://baidu.com" >repo</a>`)}
